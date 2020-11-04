@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# editor
+.vscode/
+
+# misc
+dist/
+tmp/
+temp/
+.DS_Store
+
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+uploads/*
+!uploads/.gitkeep
