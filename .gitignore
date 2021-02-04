@@ -5,10 +5,15 @@ node_modules/
 .vscode/
 
 # misc
+build/
 dist/
 tmp/
 temp/
 .DS_Store
+.env
+coverage
+# ormconfig.json
+# jest.config.json
 
 yarn-debug.log*
 yarn-error.log*

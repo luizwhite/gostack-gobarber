@@ -1,9 +1,8 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import CreateUserService from '@modules/users/services/CreateUserService';
-
-// index, show, create, update, delete
 
 /* eslint-disable class-methods-use-this */
 export default class UsersController {
@@ -18,6 +17,10 @@ export default class UsersController {
       password,
     });
 
-    return response.json({ ...user, password: undefined });
+    /**
+     * return response.json({ user: { ...user, password: undefined }, token });
+     */
+
+    return response.json(classToClass(user));
   }
 }
