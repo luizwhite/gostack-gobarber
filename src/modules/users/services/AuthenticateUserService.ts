@@ -33,7 +33,6 @@ class AuthenticateUserService {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) throw new AppError(errorMessage, 401);
-
     const passwordMatched = await this.hashProvider.compareHash(
       password,
       user.password,

@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import { v4 as uuid } from 'uuid';
 import { isEqual, getDate, getMonth, getYear } from 'date-fns';
 
@@ -12,9 +13,10 @@ class AppointmentsRepository implements IAppointmentsRepository {
   private appointments: Appointment[] = [];
 
   // prettier-ignore
-  public async findByDate(date: Date): Promise<Appointment | undefined> {
+  public async findByDate(date: Date, provider_id: string): Promise<Appointment | undefined> {
     const foundAppointment = this.appointments.find(
-      (appointment) => isEqual(appointment.date, date),
+      (appointment) => isEqual(appointment.date, date)
+      && appointment.provider_id === provider_id,
     );
 
     return foundAppointment;
