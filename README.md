@@ -1,4 +1,6 @@
-# Recuperação de Senha
+# GoBarber Back-end
+
+### Recuperação de Senha
 
 <!-- Requisitos funcionais -->
 **RF**
@@ -20,7 +22,7 @@
 - O link enviado por email para resetar senha, deve expirar em 2h;
 - O usuário precisa confirmar a nova senha ao resetar sua senha;
 
-# Atualização do Perfil
+### Atualização do Perfil
 
 **RF**
 
@@ -32,7 +34,7 @@
 - Para atualizar sua senha, o usuário deve informar a senha antiga;
 - Para atualizar sua senha, o usuário precisa confirmar a nova senha;
 
-# Agendamento de Serviços
+### Agendamento de Serviços
 
 **RF**
 
@@ -54,7 +56,7 @@
 - O usuário não pode ajudar serviços consigo mesmo;
 
 
-# Painel do prestador
+### Painel do prestador
 
 **RF**
 
