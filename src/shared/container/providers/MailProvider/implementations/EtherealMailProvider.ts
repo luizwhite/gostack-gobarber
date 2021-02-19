@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable consistent-return */
 import nodemailer, { Transporter } from 'nodemailer';
 import { inject, injectable } from 'tsyringe';
@@ -18,7 +19,7 @@ export default class EtherealMailProvider implements IMailProvider {
     nodemailer.createTestAccount((err, account) => {
       if (err) {
         console.error(`Failed to create a testing account. ${err.message}`);
-        return process.exit(1);
+        process.exit(1);
       }
 
       // Create a SMTP transporter object

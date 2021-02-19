@@ -6,11 +6,11 @@ import EtherealMailProvider from './implementations/EtherealMailProvider';
 import SESMailProvider from './implementations/SESMailProvider';
 
 const providers = {
-  ethereal: container.resolve(EtherealMailProvider),
-  ses: container.resolve(SESMailProvider),
+  ethereal: EtherealMailProvider,
+  ses: SESMailProvider,
 };
 
 container.registerInstance<IMailProvider>(
   'MailProvider',
-  providers[mailConfig.driver],
+  container.resolve<IMailProvider>(providers[mailConfig.driver]),
 );

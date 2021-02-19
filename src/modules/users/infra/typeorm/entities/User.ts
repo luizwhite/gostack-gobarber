@@ -30,10 +30,10 @@ class User {
   avatar: string;
 
   @CreateDateColumn()
-  created_at: Date; // eslint-disable-line camelcase
+  created_at: Date;
 
   @UpdateDateColumn()
-  updated_at: Date; // eslint-disable-line camelcase
+  updated_at: Date;
 
   @Expose({ name: 'avatar_url' })
   getAvatarUrl(): string | null {

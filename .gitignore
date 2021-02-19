@@ -7,11 +7,13 @@ node_modules/
 # misc
 build/
 dist/
-tmp/
 temp/
 .DS_Store
 .env
+
+# coverage reports
 coverage
+
 # ormconfig.json
 # jest.config.json
 

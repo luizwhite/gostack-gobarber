@@ -41,5 +41,6 @@ describe('ListProviders', () => {
     expect(appointmentsList).toEqual([appointment1, appointment2]);
   });
 
-  it('should be able to list the appointments from database when data is not cached', async () => {});
+  // eslint-disable-next-line max-len
+  // it('should be able to list the appointments from database when data is not cached', async () => {});
 });

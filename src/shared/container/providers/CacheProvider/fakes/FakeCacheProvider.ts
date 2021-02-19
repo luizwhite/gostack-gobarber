@@ -7,6 +7,8 @@ interface ICacheData {
 export default class FakeCacheProvider implements ICacheProvider {
   private cache: ICacheData = {};
 
+  // eslint-disable-next-line max-len
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
   public async save(key: string, value: any): Promise<void> {
     this.cache[key] = JSON.stringify(value);
   }
