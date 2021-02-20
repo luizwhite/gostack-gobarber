@@ -73,3 +73,4 @@
 **RN**
 
 - A notificação deve ter um status de liga ou não-lida para que o prestador possa controlar;
+

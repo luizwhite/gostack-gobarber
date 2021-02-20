@@ -14,7 +14,8 @@ temp/
 # coverage reports
 coverage
 
-# ormconfig.json
+# local databases config
+ormconfig.json
 # jest.config.json
 
 yarn-debug.log*
