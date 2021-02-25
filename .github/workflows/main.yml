@@ -34,7 +34,7 @@ jobs:
       
       # Executar a build
       - name: Run build
-        run: yarn build
+        run: yarn build:babel
         
       - name: Copy dist to Digital Ocean
         uses: appleboy/scp-action@master
