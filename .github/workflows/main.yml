@@ -28,11 +28,9 @@ jobs:
         with:
           node-version: 14.x
       
-      # Instalar as dependências Yarn
-      - name: Install dependencies
+      - name: Install dependency packages
         run: yarn
       
-      # Executar a build
       - name: Run build
         run: yarn build:babel
        
@@ -47,7 +45,32 @@ jobs:
           source: ".,!node_modules"
           target: "~/app/gostack-gobarber-backend"
       
-      # Executar "yarn" na Digital Ocean
-      # Executar as migrations
-      # Restart no servidor Node.js
+      - name: Install dependencies on Digital Ocean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          keY: ${{ secrets.SSH_KEY }}
+          script: cd ~/app/gostack-gobarber-backend && yarn
+      
+      - name: Run migrations on Digital Ocean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          keY: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/app/gostack-gobarber-backend
+            typeorm:prod migration:run
+      
+      - name: Run migrations on Digital Ocean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          keY: ${{ secrets.SSH_KEY }}
+          script: pm2 restart gobarber-api
       
